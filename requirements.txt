@@ -1,0 +1,3 @@
+# GUI実行時の最小依存を宣言する。
+# Qt Widgetsのみ使用し、Addonsの導入を避ける。
+PySide6-Essentials>=6.8,<7

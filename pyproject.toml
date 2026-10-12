@@ -1,0 +1,36 @@
+# Frame Toolboxのパッケージと開発ツール設定。
+# ユーザー領域へのインストールと再現可能な検証を定義する。
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "frame-toolbox"
+version = "0.1.0"
+description = "Read-only SteamOS diagnostics with a desktop UI and a mock backend"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = ["PySide6-Essentials>=6.8,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "build>=1,<2"]
+
+[project.scripts]
+frame-toolbox = "frame_toolbox.main:main"
+
+[tool.setuptools.packages.find]
+include = ["frame_toolbox*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+exclude = ["artifacts", ".venv", "pytest-cache-files-*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

@@ -1,0 +1,7 @@
+# ソース配布に利用者と開発者向けの補助ファイルを含める。
+# wheelにはアプリだけを、sdistには検証とドキュメントも提供する。
+include README.md LICENSE requirements.txt pyproject.toml .gitignore .gitattributes
+recursive-include docs *.md
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include .github *.yml
