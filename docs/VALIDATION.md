@@ -24,7 +24,7 @@ python scripts/smoke_ui.py
 python -m build --no-isolation
 ```
 
-GitHub Actions設定は用意していますが、このローカル作業ではGitHub上のCIを実行していません。
+GitHub公開後の2026-10-12に、GitHub ActionsのUbuntu / Windows × Python 3.10 / 3.13の全4構成でテスト、Ruffと全6タブのMock画面検証が成功しました。Linuxの使い捨てCI runnerにはQt描画用のEGL / OpenGLとフォントを追加しています。このCI用処理はSteam Frameのインストーラーでは実行しません。
 
 実機で確認する項目はPython / glibc / wheel / Qt platform pluginの互換性、各ツールの有無とユーザー権限、default routeとDNSの取得、バッテリー選択、実際のVRプロセス名、OpenXR manifest、音声デバイス、ping許可とGUIの表示・応答です。正式なSteamVR再起動方法が確認できるまで通常モードの再起動は無効です。
 
